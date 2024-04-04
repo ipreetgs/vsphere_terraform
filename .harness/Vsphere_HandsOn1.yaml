@@ -1,0 +1,14 @@
+inputSet:
+  name: Vsphere HandsOn
+  identifier: Vsphere_HandsOn
+  orgIdentifier: default
+  projectIdentifier: DemoTx
+  pipeline:
+    identifier: Vsphere_HandsOn
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>

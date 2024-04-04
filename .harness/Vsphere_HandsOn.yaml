@@ -1,0 +1,38 @@
+pipeline:
+  name: Vsphere HandsOn
+  identifier: Vsphere_HandsOn
+  projectIdentifier: DemoTx
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1702454216196
+        repoName: ipreetgs/vsphere_terraform
+        build: <+input>
+  stages:
+    - stage:
+        name: delegete status
+        identifier: delegete_status
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: check status
+                  identifier: check_status
+                  spec:
+                    shell: Sh
+                    command: "echo delegete is working "
+                  description: delegete UP or not
+        delegateSelectors:
+          - docker-delegate
