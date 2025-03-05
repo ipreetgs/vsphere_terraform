@@ -35,4 +35,4 @@ pipeline:
                     command: "echo delegete is working "
                   description: delegete UP or not
         delegateSelectors:
-          - docker-delegate
+          - gcp-delegate-p
