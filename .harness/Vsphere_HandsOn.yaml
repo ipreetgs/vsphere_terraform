@@ -36,3 +36,14 @@ pipeline:
                   description: delegete UP or not
         delegateSelectors:
           - gcp-delegate-p
+    - stage:
+        name: dev
+        identifier: dev
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: terragruntdemo
+          project: DemoTx
+          inputs: {}
+  allowStageExecutions: true
